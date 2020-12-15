@@ -120,4 +120,15 @@ public class WhereClauseTest {
             Assert.fail(e.toString());
         }
     }
+
+    @Test
+    public void testNotContainsField() {
+        try {
+            // Always return false when field miss
+            Assert.assertFalse(new WhereClause("d!=100").accepts(getTestCase1()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(e.toString());
+        }
+    }
 }
